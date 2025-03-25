@@ -3,11 +3,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/blogs")
 public class BlogController {
 
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to the Blog Platform API!";
+    }
     @Autowired
     private BlogService blogService;
 
